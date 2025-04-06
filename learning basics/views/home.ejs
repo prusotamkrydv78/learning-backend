@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #dbeafe, #ede9fe);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #7c3aed;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+        }
+
+        button {
+            width: 100%;
+            background: #7c3aed;
+            color: white;
+            font-weight: bold;
+            padding: 0.7rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #6d28d9;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            color: #6b7280;
+        }
+
+        .text a {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+
+        .text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register 💖</h2>
+        <form action="/" method="POST">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          
+            <label>Password</label>
+            <input type="password" name="password" placeholder="••••••••" required>
+          
+            <button type="submit">Sign Up</button>
+          </form>
+          
+        <div class="text">
+            Already have an account?
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
