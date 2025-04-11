@@ -1,8 +1,10 @@
 import exprss from 'express'
 import cookieParser from 'cookie-parser';
+import connectDb from './con.js';
 const app = exprss();
 const PORT = 3000;
 
+connectDb()
 app.set("view engine", "ejs")
 app.use(exprss.static("views"))
 app.use(exprss.json())
@@ -17,8 +19,8 @@ const users = [
 
 const isCookie = (req, res, next) => {
 
-    const user = req.cookies.loginUser  
-     
+    const user = req.cookies.loginUser
+
     if (user) {
         next()
     } else {
