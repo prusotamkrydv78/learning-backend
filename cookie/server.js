@@ -1,6 +1,7 @@
 import exprss from 'express'
 import cookieParser from 'cookie-parser';
 import connectDb from './con.js';
+import userModel from './user.model.js';
 const app = exprss();
 const PORT = 3000;
 
@@ -63,6 +64,26 @@ app.get("/logout", (req, res) => {
     res.clearCookie("loginUser")
     console.log('cookie is cleared')
     res.redirect("/")
+})
+
+app.get('/register', (req, res) => {
+    res.render("register")
+})
+app.post('/register', async (req, res) => {
+    try {
+        const { name, username, password } = req.body;
+        const isUserExited = await userModel.findOne({ username })
+        console.log(isUserExited)
+        if (isUserExited) {
+            res.send("user is already exit with this username")
+            return
+        }
+        await userModel.create({ name, username, password })
+        console.log({ name, username, password })
+        res.redirect("/login")
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 app.listen(PORT, () => {
